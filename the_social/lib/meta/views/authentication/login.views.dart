@@ -1,50 +1,90 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:the_social/app/routes/app.routes.dart';
+import 'package:the_social/meta/constants/styles.dart';
 
 import '../../../core/notifier/authentication.notifier.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+  LoginView({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
     var authenticationNotifier =
         Provider.of<AuthenticationNotifier>(context, listen: false);
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
-        title: const Text("Login View"),
+        title: const Text(
+          "Login",
+          style: textStyleTitle,
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: emailController,
-              decoration: const InputDecoration(hintText: 'Enter email'),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            TextField(
-              controller: passwordController,
-              decoration: const InputDecoration(hintText: 'Enter password'),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "Email",
+                    style: textStyle1,
+                  ),
+                ),
+                sBox10,
+                TextField(
+                  controller: emailController,
+                  decoration: textFieldStyle1(hintText: "Enter email"),
+                ),
+                sBox10,
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "Password",
+                    style: textStyle1,
+                  ),
+                ),
+                sBox10,
+                TextField(
+                  controller: passwordController,
+                  decoration: textFieldStyle1(hintText: "Enter password"),
+                ),
+              ],
             ),
             const SizedBox(
               height: 40,
             ),
-            MaterialButton(
-              onPressed: () {
-                authenticationNotifier.login(
-                    context: context,
-                    email: emailController.text,
-                    password: passwordController.text);
-              },
-              color: Colors.red,
-              child: const Text("Login"),
+            Container(
+              height: 44.0,
+              width: MediaQuery.of(context).size.width * 0.9,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                gradient: LinearGradient(
+                  colors: [Colors.blue.shade800, Colors.pinkAccent.shade100],
+                ),
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  authenticationNotifier.login(
+                      context: context,
+                      email: emailController.text,
+                      password: passwordController.text);
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent, elevation: 0),
+                child: Text(
+                  'LogIn',
+                  style: textStyle1.copyWith(fontWeight: FontWeight.normal),
+                ),
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -53,7 +93,7 @@ class LoginView extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushReplacementNamed(SignUpRoute);
               },
-              child: const Text("No account? signup"),
+              child: const Text("Create an account? Sign-up"),
             )
           ],
         ),

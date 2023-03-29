@@ -17,8 +17,8 @@ const String AddStoryRoute = "/add-story";
 const String PreviewStoryRoute = "/preview-story";
 
 final routes = {
-  LoginRoute: (context) => const LoginView(),
-  SignUpRoute: (context) => const SignUpView(),
+  LoginRoute: (context) => LoginView(),
+  SignUpRoute: (context) => SignUpView(),
   DeciderRoute: (context) => const DeciderView(),
   HomeRoute: (context) => const HomeView(),
   AddPostRoute: (context) => const AddPostView(),
