@@ -16,6 +16,29 @@ const sBox10 = SizedBox(
   height: 10,
 );
 
+Container button1(
+    {required String text, double? width, required void Function() onPress}) {
+  return Container(
+    height: 44.0,
+    width: width,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      gradient: LinearGradient(
+        colors: [Colors.deepPurple, Colors.pinkAccent.shade100],
+      ),
+    ),
+    child: ElevatedButton(
+      onPressed: onPress,
+      style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent, elevation: 0),
+      child: Text(
+        text,
+        style: textStyle1.copyWith(fontWeight: FontWeight.normal),
+      ),
+    ),
+  );
+}
+
 InputDecoration textFieldStyle1({required String hintText}) {
   return InputDecoration(
     filled: true,

@@ -20,7 +20,7 @@ class DeciderView extends StatelessWidget {
         }
         if (snapshot.hasData) {
           print("home view");
-          return const HomeView();
+          return HomeView();
         } else {
           print("login view");
           return LoginView();

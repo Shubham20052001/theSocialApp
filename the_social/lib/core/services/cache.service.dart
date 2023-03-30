@@ -15,9 +15,9 @@ class CacheService {
     await sharedPreferences.setString(key, value);
   }
 
-  Future deleteCache({required String key}) async {
+  Future<bool> deleteCache({required String key}) async {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
-    await sharedPreferences.remove(key);
+    return await sharedPreferences.remove(key);
   }
 }
