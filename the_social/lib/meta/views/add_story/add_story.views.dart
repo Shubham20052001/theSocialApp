@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:the_social/core/notifier/story.notifier.dart';
+import 'package:the_social/meta/constants/styles.dart';
 
 class AddStoryView extends StatefulWidget {
   const AddStoryView({super.key});
@@ -22,36 +23,40 @@ class _AddStoryViewState extends State<AddStoryView> {
           children: [
             if (storyNotifier(true).storyAssetFile != null)
               Container(
+                height: MediaQuery.of(context).size.height * 0.4,
+                width: MediaQuery.of(context).size.width * 0.9,
                 child: Image.file(storyNotifier(false).storyAssetFile!),
               ),
+            sBox10,
             if (storyNotifier(true).storyAssetFile == null)
-              ElevatedButton(
-                onPressed: () {
+              button1(
+                onPress: () {
                   storyNotifier(false).pickStoryAssets();
                 },
-                child: const Text("Add story"),
+                text: "Add story",
               ),
             if (storyNotifier(true).storyAssetFile != null)
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
+                  button1(
+                    onPress: () {
                       storyNotifier(false).pickStoryAssets();
                     },
-                    child: const Text("Reselect story"),
+                    text: "Reselect image",
                   ),
-                  ElevatedButton(
-                    onPressed: () {
+                  button1(
+                    onPress: () {
                       storyNotifier(false).removeStoryAssets();
                     },
-                    child: const Text("Remove story"),
+                    text: "Remove image",
                   ),
                 ],
               ),
+            sBox10,
             if (storyNotifier(true).storyAssetFile != null)
-              ElevatedButton(
-                onPressed: () async {
+              button1(
+                onPress: () async {
                   await storyNotifier(false)
                       .uploadStoryImages(context: context)
                       .whenComplete(() async {
@@ -62,7 +67,7 @@ class _AddStoryViewState extends State<AddStoryView> {
                     }
                   });
                 },
-                child: const Text("Upload story"),
+                text: "Upload story",
               ),
           ],
         ),

@@ -71,25 +71,25 @@ class _HomeViewState extends State<HomeView> {
         },
       ),
       body: tabs[_currentIndex],
-      floatingActionButton: FloatingActionButton(
-        onPressed: (() async {
-          // final authenticationNotifier =
-          //     Provider.of<AuthenticationNotifier>(context, listen: false);
-          // var email =
-          //     await authenticationNotifier.fetchUserEmail(context: context);
-          // print(email);
-          // bool i = await cacheService.deleteCache(key: "jwt");
-          // print(i);
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: (() async {
+      // final authenticationNotifier =
+      //     Provider.of<AuthenticationNotifier>(context, listen: false);
+      // var email =
+      //     await authenticationNotifier.fetchUserEmail(context: context);
+      // print(email);
+      // bool i = await cacheService.deleteCache(key: "jwt");
+      // print(i);
 
-          // postNotifier(false).fetchPost(context: context);
+      // postNotifier(false).fetchPost(context: context);
 
-          // StoryNotifier storyNotifier =
-          //     Provider.of<StoryNotifier>(context, listen: false);
-          // storyNotifier.showStoryByUser(context: context);
+      // StoryNotifier storyNotifier =
+      //     Provider.of<StoryNotifier>(context, listen: false);
+      // storyNotifier.showStoryByUser(context: context);
 
-          // Navigator.of(context).pushNamed(AddStoryRoute);
-        }),
-      ),
+      // Navigator.of(context).pushNamed(AddStoryRoute);
+      //   }),
+      // ),
     );
   }
 }
