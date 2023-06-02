@@ -18,6 +18,7 @@ class _PreviewMyStoryViewState extends State<PreviewMyStoryView> {
     StoryNotifier storyNotifier(bool renderUi) =>
         Provider.of<StoryNotifier>(context, listen: renderUi);
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Container(
         child: FutureBuilder(
           future: storyNotifier(false).showStoryByUser(context: context),

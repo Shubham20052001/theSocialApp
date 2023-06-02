@@ -28,9 +28,15 @@ class _FeedViewState extends State<FeedView> {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
-              } else {
+              } else if (snapshot.hasData) {
                 var _snapshot = snapshot.data as List;
+                if (_snapshot.isEmpty) {
+                  return const Center(child: Text("No posts yet."));
+                }
+
                 return ListOfPosts(snapshot: _snapshot);
+              } else {
+                return const Center(child: Text("No posts yet."));
               }
             },
           ),
