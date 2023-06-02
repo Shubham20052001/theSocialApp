@@ -54,6 +54,7 @@ class LoginView extends StatelessWidget {
                 ),
                 sBox10,
                 TextField(
+                  obscureText: true,
                   controller: passwordController,
                   decoration: textFieldStyle1(hintText: "Enter password"),
                 ),
