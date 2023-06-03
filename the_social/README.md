@@ -1,16 +1,18 @@
 # the_social
 
-A new Flutter project.
+●	TheSocial is a social media type of application. 
 
-## Getting Started
+●	Users can share their thoughts & ideas via text and images with everyone.
 
-This project is a starting point for a Flutter application.
+●	A token based authentication is used i.e JSON Web Tokens.
 
-A few resources to get you started if this is your first Flutter project:
+●	Implemented on 3 level architecture: PostgreSQL database, Node server & Flutter-based frontend.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+●	App Link: https://drive.google.com/file/d/11Vp_sdJO1OOzSoSZw_99eKnP7dzOAB6l/view?usp=sharing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Working Example
+
+
+
+https://github.com/Shubham20052001/theSocialApp/assets/77091152/7bf84a33-1df6-4002-975f-546a49cb3cfc
+
